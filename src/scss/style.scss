@@ -1,0 +1,33 @@
+@import "settings";
+
+body {
+  background: $bg-color;
+}
+header,
+main,
+footer {
+  border: $border-item;
+}
+header {
+  display: flex;
+  margin: 0;
+  background: $topbar-color;
+  min-height: 100px;
+}
+.nav {
+  ul {
+    width: 100%;
+    display: flex;
+  }
+
+  li {
+    width: (100%/3);
+    a {
+      color: $dark-color;
+      text-decoration: none;
+      text-transform: uppercase;
+      padding:20px;
+      text-align:center;
+    }
+  }
+}

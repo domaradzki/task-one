@@ -4,7 +4,7 @@ import Login from '../Login';
 
 const Header = () => {
     return (
-        <header className="header">
+        <header>
           <Menu />
           <Login />
         </header>

@@ -2,16 +2,16 @@ import React from 'react';
 
 const Menu = () => {
     return (
-        <nav className="menu">
-            <ul className="menu__list">
-              <li className="menu__item">
-                <a href="#">dashboard</a>
+        <nav className="nav">
+            <ul>
+              <li>
+                <a href="#dashboard">dashboard</a>
               </li>
-              <li className="menu__item">
-                <a href="#">recipes</a>
+              <li>
+                <a href="#recipes">recipes</a>
               </li>
-              <li className="menu__item">
-                <a href="#">challenge</a>
+              <li>
+                <a href="#challenge">challenge</a>
               </li>
             </ul>
           </nav>

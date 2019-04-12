@@ -1,0 +1,26 @@
+body {
+  background: #f9f9f9; }
+
+header,
+main,
+footer {
+  border: 1px solid #a9a9a9; }
+
+header {
+  display: flex;
+  margin: 0;
+  background: #fff;
+  min-height: 100px; }
+
+.nav ul {
+  width: 100%;
+  display: flex; }
+
+.nav li {
+  width: 33.33333%; }
+  .nav li a {
+    color: #7c7c7c;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 20px;
+    text-align: center; }
