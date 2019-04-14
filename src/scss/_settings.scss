@@ -1,11 +1,32 @@
-$bg-color:#f9f9f9;
-$topbar-color:#fff;
-$active-color:#EB761E;
-$primary-color:#a9a9a9;
-$dark-color:#7c7c7c;
-$header-color:#adbb0c;
-$nosctive-item:#d3d3d3;
-$footer-text-color:#828282;
-$active-text-color:#000;
+$bg-color: #f9f9f9;
+$topbar-color: #fff;
+$active-color: #eb761e;
+$primary-color: #a9a9a9;
+$dark-color: #7c7c7c;
+$header-color: #adbb0c;
+$nosctive-item: #d3d3d3;
+$footer-text-color: #828282;
+$active-text-color: #000;
 $border-item: 1px solid #a9a9a9;
 $border-box: 2px solid #e9e9e9;
+
+@mixin arrow {
+  border: solid $dark-color;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 6px;
+}
+@mixin arrow_box {
+  border: $border-item;
+  border-radius: 5px;
+  background: $bg-color;
+  height: 45px;
+  margin-bottom: 10px;
+}
+@mixin text_paragraph {
+  padding: 5px;
+  font-size: 0.6rem;
+  text-transform: uppercase;
+  color:$primary-color;
+  margin:0 0 10px 0;
+}

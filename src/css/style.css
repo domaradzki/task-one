@@ -16,6 +16,7 @@ body {
 .app__wrapper {
   width: 60%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin: 0 auto; }
@@ -54,12 +55,12 @@ header {
       height: 2px;
       bottom: 10px;
       left: 0;
-      background-color: #EB761E;
+      background-color: #eb761e;
       visibility: hidden;
       transform: scaleX(0);
       transition: all 0.3s ease-in-out 0s; }
     .nav li a:hover {
-      color: #EB761E; }
+      color: #eb761e; }
       .nav li a:hover:before {
         visibility: visible;
         transform: scaleX(1); }
@@ -80,3 +81,144 @@ header {
   color: #a9a9a9;
   font-family: "HelveticaNeue", sans-serif;
   font-size: 1rem; }
+
+.main {
+  display: flex;
+  width: 100%; }
+
+.naviagtion__bar {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  margin: 30px 0 32px 0;
+  font-family: "HelveticaNeue", sans-serif; }
+
+.naviagtion__bar--progress {
+  align-self: flex-start;
+  width: 35%; }
+  .naviagtion__bar--progress p {
+    padding: 5px;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    color: #a9a9a9;
+    margin: 0 0 10px 0; }
+  .naviagtion__bar--progress ol {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style-type: none; }
+  .naviagtion__bar--progress li {
+    position: relative;
+    display: inline-block;
+    color: #a9a9a9;
+    width: 20px;
+    text-align: center;
+    line-height: 3em;
+    font-size: 0.6rem; }
+    .naviagtion__bar--progress li:after {
+      position: absolute;
+      display: block;
+      z-index: 1;
+      top: -2px;
+      left: -5px;
+      height: 2px;
+      width: 20px;
+      content: "";
+      background-color: #a9a9a9; }
+    .naviagtion__bar--progress li:before {
+      position: absolute;
+      z-index: 2;
+      top: -6px;
+      left: 5px;
+      height: 10px;
+      width: 10px;
+      border-radius: 1.2em;
+      border: none;
+      line-height: 1.2em;
+      content: " ";
+      background-color: #a9a9a9; }
+    .naviagtion__bar--progress li:first-child:after {
+      display: none; }
+  .naviagtion__bar--progress li.done {
+    color: #a9a9a9; }
+    .naviagtion__bar--progress li.done:after {
+      background: #adbb0c; }
+    .naviagtion__bar--progress li.done:before {
+      background-color: #adbb0c; }
+  .naviagtion__bar--progress li.active {
+    color: #a9a9a9; }
+    .naviagtion__bar--progress li.active:after {
+      background: #a9a9a9; }
+    .naviagtion__bar--progress li.active:before {
+      border: 2px solid #a9a9a9;
+      background-color: #fff;
+      top: -7px;
+      left: 4px;
+      border-radius: 1.5em;
+      height: 8px;
+      width: 8px; }
+  .naviagtion__bar--progress li.todo {
+    color: #a9a9a9; }
+    .naviagtion__bar--progress li.todo:after {
+      background: #a9a9a9; }
+    .naviagtion__bar--progress li.todo:before {
+      background-color: #a9a9a9; }
+
+.naviagtion__bar--weeks {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 30%; }
+  .naviagtion__bar--weeks h1 {
+    font-size: 2.8rem;
+    padding: 10px 0 0 0;
+    color: #eb761e; }
+
+.arrow__left {
+  border: solid #7c7c7c;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 6px;
+  transform: rotate(135deg); }
+
+.arrow__right {
+  border: solid #7c7c7c;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 6px;
+  transform: rotate(-45deg); }
+
+.arrow__box--left {
+  border: 1px solid #a9a9a9;
+  border-radius: 5px;
+  background: #f9f9f9;
+  height: 45px;
+  margin-bottom: 10px;
+  padding: 14px 3px 9px 8px; }
+
+.arrow__box--right {
+  border: 1px solid #a9a9a9;
+  border-radius: 5px;
+  background: #f9f9f9;
+  height: 45px;
+  margin-bottom: 10px;
+  padding: 14px 8px 9px 3px; }
+
+.naviagtion__bar--options {
+  display: flex;
+  flex-direction: column;
+  width: 35%;
+  padding-left: 13%; }
+  .naviagtion__bar--options p {
+    padding: 5px;
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    color: #a9a9a9;
+    margin: 0 0 10px 0;
+    width: 100%; }
+  .naviagtion__bar--options .options__images {
+    width: 100%; }
+  .naviagtion__bar--options img {
+    display: inline-block;
+    margin-left: 12px; }
