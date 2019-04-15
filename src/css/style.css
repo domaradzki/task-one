@@ -1,20 +1,30 @@
 @font-face {
   font-family: "HelveticaNeue";
-  src: url(../fonts/HelveticaLTStd-Cond.otf) format("opentype"); }
+  src: url(../fonts/HelveticaNeueLTStd-Roman.otf) format("opentype"); }
 
 @font-face {
   font-family: "HelveticaNeueBold";
-  src: url(../fonts/HelveticaLTStd-Bold.otf) format("opentype"); }
+  src: url(../fonts/HelveticaNeueBold.ttf) format("truetype"); }
+
+@font-face {
+  font-family: "HelveticaNeueLight";
+  src: url(../fonts/HelveticaNeue-Light.otf) format("opentype"); }
+
+@font-face {
+  font-family: "HelveticaNeueMedium";
+  src: url(../fonts/HelveticaNeue-Medium.otf) format("opentype"); }
 
 * {
   box-sizing: border-box; }
 
 body {
   background: #f9f9f9;
-  font-family: "HelveticaNeueBold", sans-serif; }
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.8rem;
+  color: #828282; }
 
 .app__wrapper {
-  width: 60%;
+  width: 75vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -28,8 +38,7 @@ header {
   background: #fff;
   height: 79px;
   border-bottom: 1px solid #a9a9a9;
-  width: 100%;
-  border: 1px solid #a9a9a9; }
+  width: 100%; }
 
 .nav {
   width: 50%;
@@ -45,6 +54,7 @@ header {
     position: relative;
     text-decoration: none;
     text-transform: uppercase;
+    font-family: HelveticaNeueBold, Helvetica, sans-serif;
     font-size: 0.9rem;
     padding: 17px;
     text-align: center; }
@@ -79,20 +89,141 @@ header {
 
 .login__name {
   color: #a9a9a9;
-  font-family: "HelveticaNeue", sans-serif;
+  font-family: HelveticaNeue, sans-serif;
   font-size: 1rem; }
 
 .main {
   display: flex;
+  flex-direction: column;
   width: 100%; }
+
+.schedule {
+  display: flex;
+  width: 100%;
+  border-radius: 5px; }
+
+.schedule__column--header {
+  width: 85px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../images/3x12.png");
+  background-repeat: repeat; }
+  .schedule__column--header div:nth-child(2) {
+    border-bottom: 1px solid #d3d3d3; }
+  .schedule__column--header div:nth-child(3) {
+    border-top: 1px solid #d3d3d3;
+    border-bottom: 1px solid #d3d3d3; }
+  .schedule__column--header div:nth-child(4) {
+    border-top: 1px solid #d3d3d3;
+    border-bottom: 1px solid #d3d3d3; }
+  .schedule__column--header div:nth-child(5) {
+    border-top: 1px solid #d3d3d3;
+    border-bottom: 1px solid #d3d3d3; }
+  .schedule__column--header div:nth-child(6) {
+    border-top: 1px solid #d3d3d3; }
+  .schedule__column--header div:last-child {
+    border-top: 2px solid #d3d3d3; }
+
+.schedule__column {
+  display: flex;
+  flex-direction: column;
+  width: calc((100%-85px) / 7); }
+  .schedule__column div.shedule__cell--bottom:last-child {
+    border-top: 2px solid #d3d3d3; }
+
+.shedule__header {
+  height: 90px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center; }
+  .shedule__header span {
+    font-family: HelveticaNeueBold, sans-serif; }
+
+.shedule__cell {
+  border: 1px solid #e9e9e9;
+  height: 90px;
+  padding: 10px;
+  position: relative; }
+  .shedule__cell img {
+    position: absolute;
+    bottom: 0;
+    left: 20px; }
+
+.shedule__header--top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  padding: 5px;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  text-align: center;
+  color: #adbb0c; }
+
+.shedule__header--bottom,
+.shedule__cell--bottom {
+  height: 40px;
+  padding: 12px 5px;
+  width: 100%;
+  text-align: center;
+  background-image: url("../images/3x12.png");
+  background-repeat: repeat; }
+
+.shedule__cell--bottom {
+  text-transform: uppercase;
+  font-family: HelveticaNeue, sans-serif;
+  font-size: 0.7rem;
+  padding: 14px 0 0 0;
+  border-left: 1px solid #d3d3d3;
+  border-right: 1px solid #d3d3d3; }
+  .shedule__cell--bottom img {
+    margin-left: 5px; }
+  .shedule__cell--bottom div:first-child {
+    border-bottom: 1px solid #a9a9a9; }
+
+.shedule__fivecell {
+  display: flex;
+  flex-direction: column-reverse;
+  height: 450px;
+  align-items: center;
+  border: 1px solid #e9e9e9; }
+  .shedule__fivecell div.paragraphText {
+    padding-bottom: 140px; }
+    .shedule__fivecell div.paragraphText p {
+      text-transform: uppercase;
+      transform: rotate(270deg);
+      font-family: HelveticaNeauLight, sans-serif;
+      font-size: 2.1rem;
+      white-space: nowrap;
+      color: #828282;
+      margin: 0; }
+  .shedule__fivecell div.image {
+    padding-bottom: 60px; }
+
+.shedule__fivecell--bottom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80px;
+  padding: 5px;
+  text-align: center;
+  background-image: url("../images/3x12.png");
+  background-repeat: repeat;
+  border-left: 1px solid #d3d3d3; }
+  .shedule__fivecell--bottom p {
+    font-family: HelveticaNeue, sans-serif;
+    font-size: 1.1rem;
+    margin-left: 10px; }
 
 .naviagtion__bar {
   display: flex;
   align-items: center;
   width: 100%;
   height: 60px;
-  margin: 30px 0 32px 0;
-  font-family: "HelveticaNeue", sans-serif; }
+  margin: 30px 0 20px 0; }
 
 .naviagtion__bar--progress {
   align-self: flex-start;
@@ -115,6 +246,7 @@ header {
     width: 20px;
     text-align: center;
     line-height: 3em;
+    font-family: HelveticaNeue, sans-serif;
     font-size: 0.6rem; }
     .naviagtion__bar--progress li:after {
       position: absolute;
@@ -171,9 +303,11 @@ header {
   align-items: center;
   width: 30%; }
   .naviagtion__bar--weeks h1 {
-    font-size: 2.8rem;
-    padding: 10px 0 0 0;
-    color: #eb761e; }
+    font-size: 2.5rem;
+    font-family: HelveticaNeueLight, sans-serif;
+    letter-spacing: 3px;
+    color: #eb761e;
+    margin: 0; }
 
 .arrow__left {
   border: solid #7c7c7c;
@@ -209,16 +343,15 @@ header {
   display: flex;
   flex-direction: column;
   width: 35%;
-  padding-left: 13%; }
+  justify-content: center;
+  align-items: flex-end; }
   .naviagtion__bar--options p {
     padding: 5px;
     font-size: 0.6rem;
     text-transform: uppercase;
     color: #a9a9a9;
     margin: 0 0 10px 0;
-    width: 100%; }
-  .naviagtion__bar--options .options__images {
-    width: 100%; }
+    padding-right: 38px; }
   .naviagtion__bar--options img {
     display: inline-block;
     margin-left: 12px; }

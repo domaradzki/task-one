@@ -1,9 +1,16 @@
 import React, { Component } from "react";
 import Navigation from "../Navigation";
+import weight_color from "../../images/weight_item_color.png";
+import weight_grey from "../../images/weight_item_grey.png";
+import weight_ok from "../../images/ok_tick_item.png";
+import smile from "../../images/smile_item.png";
+import printer from "../../images/printer_item.png";
+import shakeImage from "../../images/gray_shake.png";
+import shakeImagesColor from "../../images/color_shake.png";
 
 class Main extends Component {
   state = {
-    week:7,
+    week:4,
     data:[]
   }
 
@@ -34,9 +41,40 @@ class Main extends Component {
   }
 
   render() {
+    const {week, data} = this.state;
+    const actualWeekData = data.filter((item)=>item.week===week);
+    const shake = 'Bod•ē Shake';
     return( 
     <div className="main">
       <Navigation week={this.state.week} changeWeek={this.handleChangeWeek}/>
+      <div className="schedule">
+        <div className="schedule__column--header">
+        <div className="shedule__header shedule__header--top"></div>
+        <div className="shedule__header"><span>6:00</span>&nbsp; AM</div>
+        <div className="shedule__header"><span>9:00</span>&nbsp; AM</div>
+        <div className="shedule__header"><span>12:00</span>&nbsp; PM</div>
+        <div className="shedule__header"><span>3:00</span>&nbsp; PM</div>
+        <div className="shedule__header"><span>6:00</span>&nbsp; PM</div>
+        <div className="shedule__header--bottom"></div>
+        <div className="shedule__header--bottom">Workout</div>
+        </div>
+        {actualWeekData.map((day)=> day.day%7!==0 ? (
+          <div className="schedule__column">
+        <div className="shedule__cell shedule__header--top">day {day.day}</div>
+        <div className="shedule__cell">{day.meal1}{(day.meal1===shake)? <img src={shakeImage} alt="shake"/> :''}</div>
+        <div className="shedule__cell">{day.meal2}{(day.meal2===shake)? <img src={shakeImage} alt="shake"/> :''}</div>
+        <div className="shedule__cell">{day.meal3}{(day.meal3===shake)? <img src={shakeImage} alt="shake"/> :''}</div>
+        <div className="shedule__cell">{day.meal4}{(day.meal4===shake)? <img src={shakeImage} alt="shake"/> :''}</div>
+        <div className="shedule__cell">{day.meal5}{(day.meal5===shake)? <img src={shakeImage} alt="shake"/> :''}</div>
+        <div className="shedule__cell--bottom">{day.carb}-CARB</div>
+        <div className="shedule__cell--bottom">{day.workout ? <><img src={weight_color} alt="weight" /><img src={weight_ok} alt="ok" /></> : <img src={weight_grey} alt="weight" />}</div>
+        </div>
+        ): (<div className="schedule__column">
+        <div className="shedule__cell shedule__header--top">day {day.day}</div>
+        <div className="shedule__fivecell"><div className="image"><img src={smile} alt="smile" /></div><div className="paragraphText"><p>guilt-free day</p></div></div>
+        <div className="shedule__fivecell--bottom"><img src={printer} alt="printer" /><p>Print</p></div></div>))}
+        
+      </div>
     </div>
    );
   }
