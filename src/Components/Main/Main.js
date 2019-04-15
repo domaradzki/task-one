@@ -3,8 +3,22 @@ import Navigation from "../Navigation";
 
 class Main extends Component {
   state = {
-    week:7
+    week:7,
+    data:[]
   }
+
+  getDataPromise = () =>
+  fetch(process.env.PUBLIC_URL + '/Data/data.json').then(response =>
+    response.json()
+  );
+
+  componentDidMount(){
+    this.getDataPromise()
+    .then(data => this.setState({
+      data
+    }))
+  }
+
   handleChangeWeek = (event) => {
     let change = 0;
     if (event.target.classList.contains('arrow__box--right') || event.target.classList.contains('arrow__right')){
