@@ -181,10 +181,13 @@ header {
   height: 90px;
   padding: 10px;
   position: relative;
-  img {
+  span {
     position: absolute;
-    bottom: 0;
-    left: 20px;
+    background: url("../images/gray_shake.png") no-repeat 0 0;
+    width: 85px;
+    height: 57px;
+    bottom:0;
+    left:35px;
   }
 }
 
@@ -265,6 +268,24 @@ header {
   }
 }
 
+.shedule__column--active {
+  border: 2px solid $active-color;
+  div.shedule__header--top {
+    height: 48px;
+  }
+  div.shedule__cell--bottom {
+    height: 39px;
+  }
+  div.shedule__cell {
+    color: #000;
+    span {
+      background: url("../images/color_shake.png") no-repeat 0 0;
+    }
+  }
+  div.shedule__header--top {
+    color: $active-color;
+  }
+}
 //navigation bar
 .naviagtion__bar {
   display: flex;
@@ -344,8 +365,8 @@ header {
     }
     // Bullets
     &:before {
-      border: 2px solid #a9a9a9;
-      background-color: #fff;
+      border: 2px solid $primary-color;
+      background-color: $topbar-color;
       top: -7px;
       left: 4px;
       border-radius: 1.5em;
@@ -407,10 +428,83 @@ header {
     @include text_paragraph;
     padding-right: 38px;
   }
-  .options__images {
-  }
   img {
     display: inline-block;
     margin-left: 12px;
+  }
+}
+
+//footer
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 50px;
+  div.footer__column {
+    width: calc(100% / 3);
+    height: 180px;
+    padding: 5px 50px 5px 5px;
+    &:nth-child(2) {
+      border-left: $border-item;
+      border-right: $border-item;
+      padding: 5px 30px;
+    }
+    &:last-child {
+      padding: 5px 30px 5px 45px;
+    }
+    h2 {
+      font-size: 1.8rem;
+      font-family: HelveticaNeue, sans-serif;
+      margin: 0;
+      min-height: 80px;
+      padding: 0 50px 0 0;
+    }
+    p {
+      font-size: 0.9rem;
+      font-family: Arial, Helvetica, sans-serif;
+      padding: 0 50px 0 0;
+    }
+    button {
+      border: 1px solid $primary-color;
+      border-radius: 7px;
+      background: $topbar-color;
+      height: 34px;
+      font-size: 1rem;
+      font-family: HelveticaNeue, sans-serif;
+      text-align: center;
+      color: $primary-color;
+      line-height: 32px;
+      position: relative;
+    }
+    button.button__buy {
+      padding: 2px 26px 2px 12px;
+      img.buttonArrow {
+        position: absolute;
+        bottom: 10px;
+        right: 7px;
+      }
+    }
+    button.button__apple {
+      padding: 4px 24px 4px 12px;
+      margin-right: 15px;
+      background: url("../images/apple_item.png") no-repeat 8px 5px;
+      padding-left: 35px;
+      img.buttonArrow {
+        position: absolute;
+        bottom: 9px;
+        right: 9px;
+      }
+    }
+    button.button__android {
+      padding: 4px 24px 4px 12px;
+      margin-right: 15px;
+      background: url("../images/android_item.png") no-repeat 8px 5px;
+      padding-left: 35px;
+      img.buttonArrow {
+        position: absolute;
+        bottom: 9px;
+        right: 9px;
+      }
+    }
   }
 }

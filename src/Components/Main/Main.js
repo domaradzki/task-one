@@ -11,6 +11,8 @@ import shakeImagesColor from "../../images/color_shake.png";
 class Main extends Component {
   state = {
     week:4,
+    activeMenu:'',
+    activeDay:23,
     data:[]
   }
 
@@ -41,7 +43,7 @@ class Main extends Component {
   }
 
   render() {
-    const {week, data} = this.state;
+    const {week, data, activeDay} = this.state;
     const actualWeekData = data.filter((item)=>item.week===week);
     const shake = 'Bod•ē Shake';
     return( 
@@ -59,13 +61,13 @@ class Main extends Component {
         <div className="shedule__header--bottom">Workout</div>
         </div>
         {actualWeekData.map((day)=> day.day%7!==0 ? (
-          <div className="schedule__column">
+          <div className={activeDay===day.day ? "schedule__column shedule__column--active" : "schedule__column"}>
         <div className="shedule__cell shedule__header--top">day {day.day}</div>
-        <div className="shedule__cell">{day.meal1}{(day.meal1===shake)? <img src={shakeImage} alt="shake"/> :''}</div>
-        <div className="shedule__cell">{day.meal2}{(day.meal2===shake)? <img src={shakeImage} alt="shake"/> :''}</div>
-        <div className="shedule__cell">{day.meal3}{(day.meal3===shake)? <img src={shakeImage} alt="shake"/> :''}</div>
-        <div className="shedule__cell">{day.meal4}{(day.meal4===shake)? <img src={shakeImage} alt="shake"/> :''}</div>
-        <div className="shedule__cell">{day.meal5}{(day.meal5===shake)? <img src={shakeImage} alt="shake"/> :''}</div>
+        <div className="shedule__cell">{day.meal1}{(day.meal1===shake)? <span/> :''}</div>
+        <div className="shedule__cell">{day.meal2}{(day.meal2===shake)? <span/> :''}</div>
+        <div className="shedule__cell">{day.meal3}{(day.meal3===shake)? <span/> :''}</div>
+        <div className="shedule__cell">{day.meal4}{(day.meal4===shake)? <span/> :''}</div>
+        <div className="shedule__cell">{day.meal5}{(day.meal5===shake)? <span/> :''}</div>
         <div className="shedule__cell--bottom">{day.carb}-CARB</div>
         <div className="shedule__cell--bottom">{day.workout ? <><img src={weight_color} alt="weight" /><img src={weight_ok} alt="ok" /></> : <img src={weight_grey} alt="weight" />}</div>
         </div>

@@ -147,10 +147,13 @@ header {
   height: 90px;
   padding: 10px;
   position: relative; }
-  .shedule__cell img {
+  .shedule__cell span {
     position: absolute;
+    background: url("../images/gray_shake.png") no-repeat 0 0;
+    width: 85px;
+    height: 57px;
     bottom: 0;
-    left: 20px; }
+    left: 35px; }
 
 .shedule__header--top {
   display: flex;
@@ -217,6 +220,19 @@ header {
     font-family: HelveticaNeue, sans-serif;
     font-size: 1.1rem;
     margin-left: 10px; }
+
+.shedule__column--active {
+  border: 2px solid #eb761e; }
+  .shedule__column--active div.shedule__header--top {
+    height: 48px; }
+  .shedule__column--active div.shedule__cell--bottom {
+    height: 39px; }
+  .shedule__column--active div.shedule__cell {
+    color: #000; }
+    .shedule__column--active div.shedule__cell span {
+      background: url("../images/color_shake.png") no-repeat 0 0; }
+  .shedule__column--active div.shedule__header--top {
+    color: #eb761e; }
 
 .naviagtion__bar {
   display: flex;
@@ -355,3 +371,64 @@ header {
   .naviagtion__bar--options img {
     display: inline-block;
     margin-left: 12px; }
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-top: 50px; }
+  footer div.footer__column {
+    width: calc(100% / 3);
+    height: 180px;
+    padding: 5px 50px 5px 5px; }
+    footer div.footer__column:nth-child(2) {
+      border-left: 1px solid #a9a9a9;
+      border-right: 1px solid #a9a9a9;
+      padding: 5px 30px; }
+    footer div.footer__column:last-child {
+      padding: 5px 30px 5px 45px; }
+    footer div.footer__column h2 {
+      font-size: 1.8rem;
+      font-family: HelveticaNeue, sans-serif;
+      margin: 0;
+      min-height: 80px;
+      padding: 0 50px 0 0; }
+    footer div.footer__column p {
+      font-size: 0.9rem;
+      font-family: Arial, Helvetica, sans-serif;
+      padding: 0 50px 0 0; }
+    footer div.footer__column button {
+      border: 1px solid #a9a9a9;
+      border-radius: 7px;
+      background: #fff;
+      height: 34px;
+      font-size: 1rem;
+      font-family: HelveticaNeue, sans-serif;
+      text-align: center;
+      color: #a9a9a9;
+      line-height: 32px;
+      position: relative; }
+    footer div.footer__column button.button__buy {
+      padding: 2px 26px 2px 12px; }
+      footer div.footer__column button.button__buy img.buttonArrow {
+        position: absolute;
+        bottom: 10px;
+        right: 7px; }
+    footer div.footer__column button.button__apple {
+      padding: 4px 24px 4px 12px;
+      margin-right: 15px;
+      background: url("../images/apple_item.png") no-repeat 8px 5px;
+      padding-left: 35px; }
+      footer div.footer__column button.button__apple img.buttonArrow {
+        position: absolute;
+        bottom: 9px;
+        right: 9px; }
+    footer div.footer__column button.button__android {
+      padding: 4px 24px 4px 12px;
+      margin-right: 15px;
+      background: url("../images/android_item.png") no-repeat 8px 5px;
+      padding-left: 35px; }
+      footer div.footer__column button.button__android img.buttonArrow {
+        position: absolute;
+        bottom: 9px;
+        right: 9px; }
