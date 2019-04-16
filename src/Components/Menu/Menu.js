@@ -1,21 +1,29 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-const Menu = () => {
-    return (
-        <nav className="nav">
+class Menu extends  Component {
+  state = {
+    active:''
+  }
+  handleChangeMenu = event => {
+    this.setState({
+      active:event.target.name
+    })
+  }
+  render(){
+    return(<nav className="nav">
             <ul>
               <li>
-                <a href="#dashboard">dashboard</a>
+                <a  className={this.state.active==='dashboard' ? 'active' : ''} onClick={this.handleChangeMenu} name="dashboard" href="/">dashboard</a>
               </li>
               <li>
-                <a href="#recipes">recipes</a>
+                <a  className={this.state.active==='recipes'  ? 'active' : ''} onClick={this.handleChangeMenu} name="recipes" href="/">recipes</a>
               </li>
               <li>
-                <a href="#challenge">challenge</a>
+                <a  className={this.state.active==='challenge'  ? 'active' : ''} onClick={this.handleChangeMenu} name="challenge" href="/">challenge</a>
               </li>
             </ul>
-          </nav>
-    )
+          </nav>)
+          }
 }
 
 export default Menu;

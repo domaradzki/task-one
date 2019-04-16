@@ -74,6 +74,13 @@ header {
       .nav li a:hover:before {
         visibility: visible;
         transform: scaleX(1); }
+  .nav li a.active {
+    color: #eb761e; }
+    .nav li a.active:before {
+      visibility: visible;
+      transform: scaleX(1);
+      width: 30%;
+      left: 35%; }
 
 .login {
   width: 50%;

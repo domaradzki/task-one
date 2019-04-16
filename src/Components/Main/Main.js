@@ -5,13 +5,10 @@ import weight_grey from "../../images/weight_item_grey.png";
 import weight_ok from "../../images/ok_tick_item.png";
 import smile from "../../images/smile_item.png";
 import printer from "../../images/printer_item.png";
-import shakeImage from "../../images/gray_shake.png";
-import shakeImagesColor from "../../images/color_shake.png";
 
 class Main extends Component {
   state = {
     week:4,
-    activeMenu:'',
     activeDay:23,
     data:[]
   }

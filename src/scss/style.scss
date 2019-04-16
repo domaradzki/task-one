@@ -85,6 +85,15 @@ header {
         }
       }
     }
+    a.active {
+      color: $active-color;
+      &:before {
+        visibility: visible;
+        transform: scaleX(1);
+        width: 30%;
+        left: 35%;
+      }
+    }
   }
 }
 
