@@ -1,3 +1,5 @@
+import 'react-app-polyfill/ie11';
+import 'whatwg-fetch'
 import React from 'react';
 import ReactDOM from 'react-dom';
 import '../src/css/style.css';
