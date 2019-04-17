@@ -25,6 +25,10 @@ class Main extends Component {
       data
     }))
   }
+  handleChangeDone = (event) =>{
+    const cell = event.target;
+    cell.classList.add('shedule__cell--done')
+  }
 
   handleChangeWeek = (event) => {
     let change = 0;
@@ -85,11 +89,11 @@ class Main extends Component {
         {actualWeekData.map((day)=> day.day%7!==0 ? (
           <div key={day.day} className={(activeDay===day.day ? "schedule__column shedule__column--active" : "schedule__column")+((smartDay===day.day || smartDay===day.day+1) ? "" : " schedule__column--mobile")}>
         <div className="shedule__cell shedule__header--top">day {day.day}</div>
-        <div className={(day.meal1===shake)? "shedule__cell schedule__image" :"shedule__cell"}>{day.meal1}</div>
-        <div className={(day.meal2===shake)? "shedule__cell schedule__image" :"shedule__cell"}>{day.meal2}</div>
-        <div className={(day.meal3===shake)? "shedule__cell schedule__image" :"shedule__cell"}>{day.meal3}</div>
-        <div className={(day.meal4===shake)? "shedule__cell schedule__image" :"shedule__cell"}>{day.meal4}</div>
-        <div className={(day.meal5===shake)? "shedule__cell schedule__image" :"shedule__cell"}>{day.meal5}</div>
+        <div onClick={this.handleChangeDone} className={(day.meal1===shake)? "shedule__cell schedule__image" :"shedule__cell"}>{day.meal1}</div>
+        <div onClick={this.handleChangeDone} className={(day.meal2===shake)? "shedule__cell schedule__image" :"shedule__cell"}>{day.meal2}</div>
+        <div onClick={this.handleChangeDone} className={(day.meal3===shake)? "shedule__cell schedule__image" :"shedule__cell"}>{day.meal3}</div>
+        <div onClick={this.handleChangeDone} className={(day.meal4===shake)? "shedule__cell schedule__image" :"shedule__cell"}>{day.meal4}</div>
+        <div onClick={this.handleChangeDone} className={(day.meal5===shake)? "shedule__cell schedule__image" :"shedule__cell"}>{day.meal5}</div>
         <div className="shedule__cell--bottom">{day.carb}-CARB</div>
         <div className="shedule__cell--bottom">{day.workout ? <><img src={weight_color} alt="weight" /><img src={weight_ok} alt="ok" /></> : <img src={weight_grey} alt="weight" />}</div>
         </div>

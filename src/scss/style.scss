@@ -199,6 +199,21 @@ header {
   width: 100%;
 }
 
+.shedule__cell--done {
+  &:after {
+    content: '';
+    background: url("../images/done_item.png") no-repeat top right;
+  //background-size: cover;
+  height: 16px;
+  width: 17px;
+  position: absolute;
+  right: 5px;
+  top:5px;
+  z-index: -1;
+
+  }
+}
+
 .shedule__header--top {
   display: flex;
   justify-content: center;
