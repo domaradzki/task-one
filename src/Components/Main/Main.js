@@ -36,6 +36,8 @@ class Main extends Component {
     }
     this.setState({
       week:((this.state.week===1 && change === -1)|| (this.state.week===12 && change === 1)) ? this.state.week: this.state.week + change 
+    ,
+      smartDay:((this.state.smartDay===1 && change === -1)|| (this.state.smartDay===84 && change === 1)) ? this.state.smartDay: (this.state.smartDay + (change*7))<1 || (this.state.smartDay + (change*7))> 84 ? this.state.smartDay :(this.state.smartDay + (change*7))
     })
   }
 
@@ -46,6 +48,16 @@ class Main extends Component {
     }
     if (event.target.classList.contains('arrow__box--left') || event.target.classList.contains('arrow__left')){
       change = -1;
+    }
+    if (change === 1 && (this.state.smartDay/this.state.week)===7){
+      this.setState({
+        week:this.state.week + change
+      })
+    }
+    if (change === -1 && ((this.state.smartDay+change)/(this.state.week+change))===7){
+      this.setState({
+        week:this.state.week + change
+      })
     }
     this.setState({
       smartDay:((this.state.smartDay===1 && change === -1)|| (this.state.smartDay===84 && change === 1)) ? this.state.smartDay: this.state.smartDay + change 
@@ -71,7 +83,7 @@ class Main extends Component {
         <div className="shedule__header--bottom">Workout</div>
         </div>
         {actualWeekData.map((day)=> day.day%7!==0 ? (
-          <div className={(activeDay===day.day ? "schedule__column shedule__column--active" : "schedule__column")+((smartDay===day.day || smartDay==day.day+1) ? "" : " schedule__column--mobile")}>
+          <div key={day.day} className={(activeDay===day.day ? "schedule__column shedule__column--active" : "schedule__column")+((smartDay===day.day || smartDay===day.day+1) ? "" : " schedule__column--mobile")}>
         <div className="shedule__cell shedule__header--top">day {day.day}</div>
         <div className={(day.meal1===shake)? "shedule__cell schedule__image" :"shedule__cell"}>{day.meal1}</div>
         <div className={(day.meal2===shake)? "shedule__cell schedule__image" :"shedule__cell"}>{day.meal2}</div>
@@ -81,7 +93,7 @@ class Main extends Component {
         <div className="shedule__cell--bottom">{day.carb}-CARB</div>
         <div className="shedule__cell--bottom">{day.workout ? <><img src={weight_color} alt="weight" /><img src={weight_ok} alt="ok" /></> : <img src={weight_grey} alt="weight" />}</div>
         </div>
-        ): (<div className={smartDay!==day.day ? "schedule__column schedule__column--mobile" : "schedule__column"}>
+        ): (<div key={day.day} className={smartDay!==day.day ? "schedule__column schedule__column--mobile" : "schedule__column"}>
         <div className="shedule__cell shedule__header--top">day {day.day}</div>
         <div className="shedule__fivecell"><div className="image"><img src={smile} alt="smile" /></div><div className="paragraphText"><p>guilt-free day</p></div></div>
         <div className="shedule__fivecell--bottom"><img src={printer} alt="printer" /><p>Print</p></div></div>))}
