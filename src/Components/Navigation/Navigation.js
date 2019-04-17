@@ -5,7 +5,7 @@ import meat from "../../images/item3.png";
 import fish from "../../images/item4.png";
 import chicken from "../../images/item5.png";
 
-const Navigation = ({week, changeWeek}) => {
+const Navigation = ({week, day, changeDay, changeWeek}) => {
   return (
     <div className="naviagtion__bar">
       <div className="naviagtion__bar--progress">
@@ -22,6 +22,15 @@ const Navigation = ({week, changeWeek}) => {
         </button>
         <h1>Week {week}</h1>
         <button name='next' className="arrow__box--right" onClick={changeWeek}>
+          <span className="arrow__right" />
+        </button>
+      </div>
+      <div className="naviagtion__bar--days">
+        <button name='previous' className="arrow__box--left" onClick={changeDay}>
+          <span className="arrow__left" />
+        </button>
+        <h1>Day {day}</h1>
+        <button name='next' className="arrow__box--right" onClick={changeDay}>
           <span className="arrow__right" />
         </button>
       </div>

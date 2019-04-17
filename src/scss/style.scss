@@ -294,6 +294,7 @@ header {
     color: $active-color;
   }
 }
+
 //navigation bar
 .naviagtion__bar {
   display: flex;
@@ -395,7 +396,7 @@ header {
   }
 }
 
-.naviagtion__bar--weeks {
+.naviagtion__bar--weeks, .naviagtion__bar--days {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -407,6 +408,9 @@ header {
     color: $active-color;
     margin: 0;
   }
+}
+.naviagtion__bar--days {
+  display:none;
 }
 .arrow__left {
   @include arrow;
@@ -652,6 +656,29 @@ footer {
         width: 80vw;
         align-items: center;
       }
+      .naviagtion__bar--days {
+        display:flex;
+        order: 3;
+        width: 80vw;
+        align-items: center;
+        h1 {
+          font-size: 2rem;
+        }
+      }
     }
   }
+  .schedule__column--mobile {
+    display: none;
+  }
+  .schedule__column {
+    width: calc((100% - 100px) / 2);
+}
+.schedule {
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+}
+.shedule__cell.schedule__image {
+ background-size: 50% auto;
+}
 }
